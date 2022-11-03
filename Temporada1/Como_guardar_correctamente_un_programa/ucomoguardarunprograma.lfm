@@ -1,0 +1,29 @@
+object Form1: TForm1
+  Left = 425
+  Height = 119
+  Top = 206
+  Width = 390
+  BorderStyle = bsDialog
+  Caption = 'Form1'
+  ClientHeight = 119
+  ClientWidth = 390
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  object Label1: TLabel
+    Left = 38
+    Height = 15
+    Top = 20
+    Width = 95
+    Caption = 'Hola. Bienvenidos'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 24
+    Height = 35
+    Top = 49
+    Width = 126
+    Caption = 'Saludar'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+end
