@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls,
-  StdCtrls;
+  StdCtrls, Math;
 
 type
 
@@ -14,16 +14,24 @@ type
 
   TFTiposVariables = class(TForm)
     bCalcular: TButton;
+    bPitagoras: TButton;
     edNum1: TEdit;
     edNum2: TEdit;
+    edCatA: TEdit;
+    edCatB: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     mCalcBasica: TMemo;
+    mConsolaPitagoras: TMemo;
     paginaMenuPrincipal: TPageControl;
     Panel1: TPanel;
     Panel2: TPanel;
+    Panel3: TPanel;
     tabCalculadora: TTabSheet;
-    tabFloat: TTabSheet;
+    tabTrianguloPitagoras: TTabSheet;
+    procedure calcularPitagoras(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure realizarCalculo(Sender: TObject);
   private
@@ -44,13 +52,39 @@ implementation
 
 procedure TFTiposVariables.FormCreate(Sender: TObject);
 begin
+  // Borrar las consolas
+  mCalcBasica.Lines.Clear;
+  mConsolaPitagoras.Lines.Clear;
+end;
+
+procedure TFTiposVariables.calcularPitagoras(Sender: TObject);
+var
+  catA, catB, Hipt, Perimetro, Area: real;
+begin
+  catA := StrToFloat(edCatA.Text);
+  catB := StrToFloat(edCatB.Text);
+
+  Hipt := sqrt(Power(catA, 2) + Power(catB, 2));
+
+  Area := (catA * catB) / 2;
+  Perimetro := catA + catB + Hipt;
+
+  // Imprimir los resultados en la consola
+  mConsolaPitagoras.Lines.Add('');
+  mConsolaPitagoras.Lines.Add('====================');
+  mConsolaPitagoras.Lines.Add('Cateto A =' + FloatToStr(catA));
+  mConsolaPitagoras.Lines.Add('Cateto B =' + FloatToStr(catB));
+  mConsolaPitagoras.Lines.Add('Hipotenusa =' + FloatToStr(Hipt));
+  mConsolaPitagoras.Lines.Add('Área =' + FloatToStr(Area));
+  mConsolaPitagoras.Lines.Add('Perímetro =' + FloatToStr(Perimetro));
+
 
 end;
 
 procedure TFTiposVariables.realizarCalculo(Sender: TObject);
 var
   // Variables Locales
-  a, b, c: Integer;
+  a, b, c: integer;
 
 begin
   a := StrToInt(edNum1.Text);
@@ -60,21 +94,20 @@ begin
   mCalcBasica.Lines.Add('======================');
 
   // Realizar Calculo
-  c := a+b;
-  mCalcBasica.Lines.Add('Suma ='+ IntToStr(c));
+  c := a + b;
+  mCalcBasica.Lines.Add('Suma =' + IntToStr(c));
 
-  c := a-b;
-  mCalcBasica.Lines.Add('Diferencia  ='+ IntToStr(c));
+  c := a - b;
+  mCalcBasica.Lines.Add('Diferencia  =' + IntToStr(c));
 
-  c := a*b;
-  mCalcBasica.Lines.Add('Producto ='+ IntToStr(c));
+  c := a * b;
+  mCalcBasica.Lines.Add('Producto =' + IntToStr(c));
 
   c := a div b;
-  mCalcBasica.Lines.Add('Cociente ='+ IntToStr(c));
+  mCalcBasica.Lines.Add('Cociente =' + IntToStr(c));
 
   c := a mod b;
-  mCalcBasica.Lines.Add('Residuo ='+ IntToStr(c));
+  mCalcBasica.Lines.Add('Residuo =' + IntToStr(c));
 end;
 
 end.
-

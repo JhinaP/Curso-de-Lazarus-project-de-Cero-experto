@@ -29,13 +29,13 @@ object FTiposVariables: TFTiposVariables
     Height = 507
     Top = 88
     Width = 858
-    ActivePage = tabCalculadora
+    ActivePage = tabTrianguloPitagoras
     Align = alClient
     Font.Color = clNavy
     Font.Height = -24
     Font.Style = [fsBold]
     ParentFont = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object tabCalculadora: TTabSheet
       Caption = 'Calculadora'
@@ -137,11 +137,113 @@ object FTiposVariables: TFTiposVariables
         Lines.Strings = (
           '=== Calculadora Basica ==='
         )
+        ScrollBars = ssAutoVertical
         TabOrder = 1
       end
     end
-    object tabFloat: TTabSheet
-      Caption = 'Float'
+    object tabTrianguloPitagoras: TTabSheet
+      Caption = 'Triangulo y Pitagoras'
+      ClientHeight = 462
+      ClientWidth = 850
+      object Panel3: TPanel
+        Left = 15
+        Height = 432
+        Top = 15
+        Width = 336
+        Align = alLeft
+        BorderSpacing.Around = 15
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 428
+        ClientWidth = 332
+        Font.Color = clNavy
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 5
+          Height = 32
+          Top = 5
+          Width = 322
+          Align = alTop
+          BorderSpacing.Around = 5
+          Caption = 'Ingrese el cateto A'
+          Font.Color = clNavy
+          Font.Height = -24
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edCatA: TEdit
+          Left = 5
+          Height = 29
+          Top = 42
+          Width = 322
+          Align = alTop
+          BorderSpacing.Around = 5
+          Color = clWhite
+          Font.Color = clPurple
+          Font.Height = -16
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          Text = '123'
+        end
+        object Label4: TLabel
+          Left = 5
+          Height = 32
+          Top = 76
+          Width = 322
+          Align = alTop
+          BorderSpacing.Around = 5
+          Caption = 'Ingrese el cateto B'
+          Font.Color = clNavy
+          Font.Height = -24
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edCatB: TEdit
+          Left = 5
+          Height = 29
+          Top = 113
+          Width = 322
+          Align = alTop
+          BorderSpacing.Around = 5
+          Color = clWhite
+          Font.Color = clPurple
+          Font.Height = -16
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+          Text = '877'
+        end
+        object bPitagoras: TButton
+          Left = 15
+          Height = 43
+          Top = 157
+          Width = 302
+          Align = alTop
+          BorderSpacing.Around = 15
+          Caption = 'Calcular'
+          OnClick = calcularPitagoras
+          TabOrder = 2
+        end
+      end
+      object mConsolaPitagoras: TMemo
+        Left = 366
+        Height = 432
+        Top = 15
+        Width = 469
+        Align = alClient
+        BorderSpacing.Around = 15
+        Lines.Strings = (
+          '=== Calculadora Basica ==='
+        )
+        ScrollBars = ssAutoVertical
+        TabOrder = 1
+      end
     end
   end
 end

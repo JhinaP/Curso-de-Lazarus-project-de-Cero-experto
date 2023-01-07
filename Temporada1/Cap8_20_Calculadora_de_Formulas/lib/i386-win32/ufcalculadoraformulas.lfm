@@ -1,0 +1,193 @@
+object FCalculadoraFormulas: TFCalculadoraFormulas
+  Left = 256
+  Height = 501
+  Top = 103
+  Width = 1022
+  BorderStyle = bsDialog
+  Caption = 'Calculadora de Formulas '
+  ClientHeight = 501
+  ClientWidth = 1022
+  Color = 16744576
+  Font.Color = clWhite
+  Font.Height = -16
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.4.0'
+  object MenuPrincipal: TTreeView
+    Left = 0
+    Height = 458
+    Top = 43
+    Width = 256
+    Align = alLeft
+    Font.Color = clWhite
+    Font.Height = -16
+    ParentFont = False
+    TabOrder = 0
+    OnClick = seleccionarMenu
+    Items.Data = {
+      F9FFFFFF020001000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+      00000017000000436F6E7665727369C3B36E20646520536567756E646F73
+    }
+  end
+  object Contenido: TPageControl
+    Left = 256
+    Height = 458
+    Top = 43
+    Width = 766
+    ActivePage = TabSheet1
+    Align = alClient
+    Font.Color = clWhite
+    Font.Height = -16
+    ParentFont = False
+    TabIndex = 1
+    TabOrder = 1
+    object TabSheet13: TTabSheet
+      Caption = 'Bienvenida'
+      ClientHeight = 424
+      ClientWidth = 758
+      Font.Color = clWhite
+      Font.Height = -16
+      ParentFont = False
+      object Label2: TLabel
+        Left = 50
+        Height = 324
+        Top = 50
+        Width = 658
+        Align = alClient
+        Alignment = taCenter
+        BorderSpacing.Around = 50
+        Caption = 'Bienvenido(a) a la calculadora de fórmulas '#13#10#13#10'Copyright  © 2022: Jhina Paola Ortiz Gallego, '#13#10'Kelly Vanessa Valencia Villa'
+        Font.Color = clGray
+        Font.Height = -32
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Conversión de Segundos'
+      ClientHeight = 424
+      ClientWidth = 758
+      object mLogSegundos: TMemo
+        Left = 0
+        Height = 268
+        Top = 156
+        Width = 758
+        Align = alClient
+        Color = clWhite
+        Font.Color = clBlack
+        Font.Height = -16
+        Lines.Strings = (
+          'mLogSegundos'
+        )
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 42
+        Top = 0
+        Width = 758
+        Align = alTop
+        Caption = 'Conversión de Segundos'
+        Color = 12189695
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+      end
+      object GroupBox1: TGroupBox
+        Left = 20
+        Height = 74
+        Top = 62
+        Width = 718
+        Align = alTop
+        BorderSpacing.Around = 20
+        Caption = 'Ingrese el valor en segundos'
+        ClientHeight = 48
+        ClientWidth = 714
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object edSegundos: TEdit
+          Left = 8
+          Height = 37
+          Top = 8
+          Width = 544
+          Align = alClient
+          Alignment = taRightJustify
+          BorderSpacing.Left = 5
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 5
+          BorderSpacing.Around = 3
+          Font.Color = clPurple
+          Font.Height = -16
+          ParentFont = False
+          TabOrder = 0
+          Text = '285174'
+        end
+        object bConvertirSegundo: TButton
+          Left = 560
+          Height = 48
+          Top = 0
+          Width = 154
+          Align = alRight
+          Caption = 'Convertir'
+          Font.Color = clWhite
+          Font.Height = -16
+          OnClick = ConvertirSegundos
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'TabSheet3'
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'TabSheet4'
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'TabSheet5'
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'TabSheet6'
+    end
+    object TabSheet7: TTabSheet
+      Caption = 'TabSheet7'
+    end
+    object TabSheet8: TTabSheet
+      Caption = 'TabSheet8'
+    end
+    object TabSheet9: TTabSheet
+      Caption = 'TabSheet9'
+    end
+    object TabSheet10: TTabSheet
+      Caption = 'TabSheet10'
+    end
+    object TabSheet11: TTabSheet
+      Caption = 'TabSheet11'
+    end
+    object TabSheet12: TTabSheet
+      Caption = 'TabSheet12'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 43
+    Top = 0
+    Width = 1022
+    Align = alTop
+    Caption = 'Calculadora de Formulas'
+    TabOrder = 2
+  end
+end
